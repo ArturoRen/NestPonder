@@ -8,6 +8,8 @@ import {
   CmsUser,
   CmsUserSchema,
 } from './schema/cms_user_schema/cms_user.schema';
+import { WinstonLogger, WinstonModule } from 'nest-winston';
+import { winstonCreate } from './common/middleware/winston_log';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import {
     //   [{ name: CmsUser.name, schema: CmsUserSchema }],
     //   getConfig().options.connectionName,
     // ),
+    //日志
+    WinstonModule.forRoot(winstonCreate()),
   ],
   controllers: [AppController],
   providers: [AppService],

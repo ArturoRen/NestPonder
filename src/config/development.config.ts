@@ -1,4 +1,4 @@
-import { EnvConfig } from './config.interface';
+import { EnvConfig, EnvEnum } from './config.interface';
 
 const devConfig: EnvConfig = {
   port: 3001,
@@ -12,6 +12,7 @@ const devConfig: EnvConfig = {
       };
     },
   },
+  env:EnvEnum.DEV,
 };
 
 export default devConfig;
